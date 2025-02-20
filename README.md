@@ -110,13 +110,9 @@ POST /items
 {
   "id": 1,
   "name": "Laptop",
-  "category": "A"
+  "category": "A",
+  "message": "Item saved successfully"
 }
-```
-
-### 🔹 **Get All Items**
-```http
-GET /items
 ```
 
 ---
