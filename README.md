@@ -5,7 +5,7 @@ This is a **Spring Boot REST API** that allows creating and retrieving items wit
 ---
 
 ## 🚀 **Features**
-✔ Dynamic category configuration based on **Spring Profiles** (`dev`, `qa`, `prod`).  
+✔ Dynamic category configuration based on **Spring Profiles** (`dev`, `qa`).  
 ✔ Reads allowed categories from **Spring properties files** per environment.  
 ✔ Implements **abstraction in the service layer**.  
 ✔ Includes **proper error handling and exception management**.  
@@ -18,10 +18,8 @@ This is a **Spring Boot REST API** that allows creating and retrieving items wit
 - **Spring Boot 3.x**
 - **Spring Data JPA**
 - **H2 Database (for development)**
-- **PostgreSQL / MySQL (for production)**
 - **Maven**
 - **Lombok**
-- **Swagger (API Documentation)**
 
 ---
 
@@ -31,7 +29,7 @@ com.example.dcim
 │── controller    # REST controllers
 │── dto           # Data Transfer Objects (DTOs)
 │── exception     # Custom exceptions & handlers
-│── model         # Entity classes
+│── entity         # Entity classes
 │── repository    # JPA Repositories
 │── service
 │   ├── ItemService.java           # Service Interface
@@ -59,10 +57,6 @@ app.allowed-categories=A,B
 app.allowed-categories=A,B
 ```
 📄 **`application-qa.properties`**
-```properties
-app.allowed-categories=A,B,C
-```
-📄 **`application-prod.properties`**
 ```properties
 app.allowed-categories=A,B,C
 ```
@@ -135,28 +129,6 @@ GET /items
 
 ---
 
-## 📜 **Swagger API Documentation**
-The API is documented using **Swagger**.  
-After starting the application, open:
-```
-http://localhost:8080/swagger-ui/index.html
-```
-
----
-
-## 🛠️ **Building & Deployment**
-### 🔹 **Docker Support**
-To run in a **Docker container**, build the image:
-```bash
-docker build -t dcim-api .
-docker run -p 8080:8080 dcim-api
-```
-
-### 🔹 **Deploy to Production**
-1. Set up a **database (PostgreSQL / MySQL)** and update `application-prod.properties`.
-2. Use a **cloud service** (AWS, Azure, GCP) or **Docker** to deploy.
-
----
 
 ## ✨ **Contributing**
 Pull requests are welcome! Please follow coding best practices and submit issues for bugs or enhancements.
